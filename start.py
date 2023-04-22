@@ -7,7 +7,7 @@ file_urls = [
     'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb ',
 
 ]  # Replace with a list of URLs of the files you want to download
-blocks = input("Enter your block size for download file example: 4097")
+blocks = input("Enter your block size for download file: ")
 for url in file_urls:
     filename = os.path.basename(url)
 
