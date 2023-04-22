@@ -7,14 +7,14 @@ file_urls = [
     'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb ',
 
 ]  # Replace with a list of URLs of the files you want to download
-blocks = input("Enter your block size for download file: ")
+
 for url in file_urls:
     filename = os.path.basename(url)
 
     response = requests.get(url, stream=True)
 
     total_size = int(response.headers.get('content-length', 0))
-    block_size = blocks
+    block_size = 1024
     progress_bar = tqdm(total=total_size, unit='iB', unit_scale=True, desc=filename)
 
     with open(filename, 'wb') as f:
